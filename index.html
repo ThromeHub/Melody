@@ -9,9 +9,15 @@
 	<div class="main">
 		user:<input type="text"><br />
 		pass:<input type="password"><br />
+		<span id="span">3</span>
 	</div>
 </body>
 </html>
 <script>
-	alert(111)
+	var time = 4
+	var span = document.getElementById("span")
+	var api = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx160ef97b3fd074ad&redirect_uri=http%3A%2F%2Ftestm.yktour.com.cn%2Fpay%2Fcallback%2Fweixin&response_type=code&scope=snsapi_base&state=0|12127#wechat_redirect"
+	var timer = setInterval(function(){
+		time==0?span.innerText=time--:location.href=api
+	},1000)
 </script>
